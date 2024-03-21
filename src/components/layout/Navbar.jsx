@@ -9,6 +9,7 @@ import { MdExplore } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import { FaFeatherAlt } from "react-icons/fa";
 import { CiCirclePlus } from "react-icons/ci";
+import WalletConnect from "../web3/ConnectWallet";
 
 const Navbar = () => {
   return (
@@ -55,7 +56,8 @@ const Navbar = () => {
           </div>
           <div>
             <button className="flex items-center rounded-2xl bg-white text-black px-4 py-2 gap-1 text-[18px]">
-              <FaFeatherAlt /> Create
+              {/* <FaFeatherAlt /> Create */}
+              <WalletConnect/>
             </button>
           </div>
           <div className="bg-[#151419] rounded-full p-2.5">
