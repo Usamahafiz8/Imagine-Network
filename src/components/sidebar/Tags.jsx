@@ -1,0 +1,27 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+const Tags = ({ show }) => {
+  Tags.propTypes = {
+    show: PropTypes.bool.isRequired,
+    setShow: PropTypes.func.isRequired,
+  };
+  console.log("tags ", show);
+  return (
+    <div>
+      {show && (
+        <div className="tags h-screen pr-20 flex text-start text-white pt-[140px] flex-col gap-8">
+          <h1>Home</h1>
+          <h1>Hot!</h1>
+          <h1>Submit News</h1>
+          <h1>Submit Image</h1>
+          <h1>Submit Video</h1>
+          <h1>Tags</h1>
+          <h1>Top Users</h1>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Tags;
