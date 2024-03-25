@@ -10,7 +10,7 @@ const Tags = ({ show }) => {
   return (
     <div>
       {show && (
-        <div className="tags h-screen pr-20 flex text-start text-white pt-[140px] flex-col gap-8">
+        <div className="tags fixed bg-black h-screen pr-20 flex text-start text-white pt-[140px] flex-col gap-8">
           <h1>Home</h1>
           <h1>Hot!</h1>
           <h1>Submit News</h1>
