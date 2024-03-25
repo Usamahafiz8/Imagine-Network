@@ -10,6 +10,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaFeatherAlt } from "react-icons/fa";
 import { CiCirclePlus } from "react-icons/ci";
 import WalletConnect from "../web3/ConnectWallet";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -18,37 +19,50 @@ const Navbar = () => {
         <div>
           <img src={darklogo} width={60} height={60} alt="logo" />
         </div>
-        <div className="flex items-center gap-4 text-[18px] text-gray-200">
-          <div className="flex gap-2 items-center cursor-pointer">
-            <span>
-              <IoHomeSharp fontSize={24} />
-            </span>
-            <h1 className="bd">Home</h1>
-          </div>
-          <div className="flex gap-2 items-center cursor-pointer">
-            <span>
-              <FaClapperboard fontSize={20} />
-            </span>
-            <h1>Shorts</h1>
-          </div>
-          <div className="flex gap-2 items-center cursor-pointer">
+        <div className="flex items-center  w-6/12 pl-48 justify-center  gap-8 text-[18px] text-gray-200">
+          <Link to="/">
+            <div className="flex gap-2 nav-item  items-center cursor-pointer">
+              <span className="nav-icon-border">
+                <IoHomeSharp fontSize={24} />
+              </span>
+              <h1 className="bd">Home</h1>
+            </div>
+          </Link>
+          <Link to="/signup">
+            <div className="flex gap-2 nav-item items-center cursor-pointer">
+              <span>
+                <FaClapperboard fontSize={20} />
+              </span>
+              <h1>Shorts</h1>
+            </div>
+          </Link>
+          <Link to='login' >
+
+          <div className="flex gap-2 nav-item items-center cursor-pointer">
             <span>
               <FaEllo fontSize={20} />
             </span>
             <h1>Reactions</h1>
           </div>
-          <div className="flex gap-2 items-center cursor-pointer">
+          </Link>
+          <Link to='/' >
+
+          <div className="flex nav-item gap-2 items-center cursor-pointer">
             <span>
               <FaFireFlameSimple fontSize={20} />
             </span>
             <h1>Hot!</h1>
           </div>
-          <div className="flex gap-2 items-center cursor-pointer">
+          </Link>
+          <Link to='/' >
+
+          <div className="flex gap-2 nav-item items-center cursor-pointer">
             <span>
               <MdExplore fontSize={20} />
             </span>
             <h1>Explore</h1>
           </div>
+          </Link>
         </div>
         <div className="flex text-gray-200 gap-2 items-center">
           <div className="rounded-full p-2.5 bg-[#151419]">
@@ -57,7 +71,7 @@ const Navbar = () => {
           <div>
             <button className="flex items-center rounded-2xl bg-white text-black px-4 py-2 gap-1 text-[18px]">
               {/* <FaFeatherAlt /> Create */}
-              <WalletConnect/>
+              <WalletConnect />
             </button>
           </div>
           <div className="bg-[#151419] rounded-full p-2.5">
