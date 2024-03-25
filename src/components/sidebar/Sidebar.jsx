@@ -13,6 +13,7 @@ import { FaSun } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa6";
 import Tags from "./Tags";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ show, setShow }) => {
   const [showIcons, setShowIcons] = useState(true);
@@ -30,7 +31,7 @@ const Sidebar = ({ show, setShow }) => {
   console.log(show);
   return (
     <>
-      <div className="w-[5%]   bg-[#030303] h-screen  ">
+      <div className="fixed ">
         <div className="flex gap-8 ">
           <div className="text-white">
             {showIcons ? (
@@ -82,9 +83,11 @@ const Sidebar = ({ show, setShow }) => {
                   </div>
                 </div>
                 {/* --- */}
-                <div className="flex flex-col gap-5 pt-20">
+                <div className="flex flex-col bg-[#030303] gap-5 pt-20">
                   <div className="bg-[#151419] px-2 py-2 w-[35px]  h-[35px] mx-4 rounded-xl">
-                    <FaUser />
+                    <Link to="/login">
+                      <FaUser />
+                    </Link>
                   </div>
                   <div className="flex flex-col gap-5 px-2 py-2 w-[35px] h-[70px] mx-4 bg-[#151419]  rounded-xl">
                     <FaSun />
@@ -99,10 +102,6 @@ const Sidebar = ({ show, setShow }) => {
 
           {show && <Tags />}
         </div>
-
-        {/* --- */}
-
-        {/* <Tags /> */}
       </div>
     </>
   );
