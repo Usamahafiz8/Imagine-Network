@@ -15,7 +15,7 @@ import Tags from "./Tags";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ show, setShow }) => {
+const Sidebar = ({ show, setShow,setIsOpen,isOpen }) => {
   const [showIcons, setShowIcons] = useState(true);
   Sidebar.propTypes = {
     show: PropTypes.bool.isRequired,
@@ -23,19 +23,35 @@ const Sidebar = ({ show, setShow }) => {
   };
   const toggleIcons = () => {
     setShowIcons(!showIcons);
+    handleHamburgerMenu()
   };
 
   const toggleTags = () => {
     setShow(!show);
   };
+  const handleMouseleave = () => {
+    setTimeout(() => {
+      setShow(false)
+    }, 500)
+  }
+
+  const handleHamburgerMenu = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  };
   console.log(show);
   return (
     <>
-      <div className="fixed ">
-        <div className="flex gap-8 ">
-          <div className="text-white">
-            {showIcons ? (
-              <div className="py-2 px-6 " onClick={toggleIcons}>
+      <div className="fixed h-full" >
+        <div className="h-full py-3  " onMouseEnter={() => setShow(true)} onMouseLeave={handleMouseleave}>
+          <div className="text-white   h-full  flex flex-col justify-between items-center" >
+            
+           <div className="">
+           {showIcons ? (
+              <div className="py-2  px-6 " onClick={toggleIcons}>
                 <FaGripLines fontSize="24px" />
               </div>
             ) : (
@@ -43,64 +59,69 @@ const Sidebar = ({ show, setShow }) => {
                 <RxCross1 fontSize="24px" />
               </div>
             )}
-            <div className="flex gap-20 pt-24">
-              <div className="icons ">
+           </div>
+            <div className="flex gap-20 ">
+              <div className="icons flex flex-col justify-between">
                 <div className="flex flex-col gap-5 px-6 ">
                   <div>
-                    <button onClick={toggleTags} className="icon-border py-2 ">
+                    <button className="icon-border py-2 ">
                       <IoHomeSharp fontSize="20px" />
                     </button>
                   </div>
                   <div>
-                    <button className="icon-border py-2" onClick={toggleTags}>
+                    <button className="icon-border py-2">
                       <FaFireFlameSimple fontSize="20px" />
                     </button>
                   </div>
                   <div>
-                    <button className="icon-border py-2" onClick={toggleTags}>
+                    <button className="icon-border py-2" >
                       <FaNewspaper fontSize="20px" />
                     </button>
                   </div>
                   <div>
-                    <button className="icon-border py-2" onClick={toggleTags}>
+                    <button className="icon-border py-2" >
                       <FaVideo fontSize="20px" />
                     </button>
                   </div>
                   <div>
-                    <button className="icon-border py-2" onClick={toggleTags}>
+                    <button className="icon-border py-2" >
                       <FaImage fontSize="20px" />
                     </button>
                   </div>
                   <div>
-                    <button className="icon-border py-2" onClick={toggleTags}>
+                    <button className="icon-border py-2" >
                       <FaHashtag fontSize="20px" />
                     </button>
                   </div>
                   <div>
-                    <button className="icon-border py-2" onClick={toggleTags}>
+                    <button className="icon-border py-2" >
                       <FaUsers fontSize="20px" />
                     </button>
                   </div>
                 </div>
                 {/* --- */}
-                <div className="flex flex-col bg-[#030303] gap-5 pt-20">
-                  <div className="bg-[#151419] px-2 py-2 w-[35px]  h-[35px] mx-4 rounded-xl">
+               
+              </div>
+            </div>
+             <div className="flex flex-col gap-4 ">
+                  <div className="bg-[#151419] p-3 flex items-center justify-center  mx-4 rounded-full">
                     <Link to="/login">
                       <FaUser />
                     </Link>
                   </div>
-                  <div className="flex flex-col gap-5 px-2 py-2 w-[35px] h-[70px] mx-4 bg-[#151419]  rounded-xl">
+                  <div className="flex flex-col items-center gap-5 p-3 w-[35px] h-[70px] mx-4 bg-[#151419]  rounded-2xl">
                     <FaSun />
 
                     <FaMoon />
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
           {/*  */}
 
           {show && <Tags />}
+          
+        
+          
         </div>
       </div>
     </>

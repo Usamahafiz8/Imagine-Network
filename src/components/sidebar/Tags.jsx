@@ -8,9 +8,9 @@ const Tags = ({ show }) => {
   };
   console.log("tags ", show);
   return (
-    <div>
+    <div >
       {show && (
-        <div className="tags fixed bg-black h-screen pr-20 flex text-start text-white pt-[140px] flex-col gap-8">
+        <div className="tags fixed bg-black h-screen pl-20 pr-20 flex text-start text-white pt-[140px] flex-col gap-8">
           <h1>Home</h1>
           <h1>Hot!</h1>
           <h1>Submit News</h1>
@@ -19,7 +19,8 @@ const Tags = ({ show }) => {
           <h1>Tags</h1>
           <h1>Top Users</h1>
         </div>
-      )}
+        )}
+      
     </div>
   );
 };

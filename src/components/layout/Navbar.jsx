@@ -1,6 +1,7 @@
 import React from "react";
 // import logo from "../assets/png/imagen.png";
 import darklogo from "../assets/png/863838-5.png";
+// import darklogo from "../assets/png/newlogo.png";
 import { IoHomeSharp } from "react-icons/io5";
 import { FaClapperboard } from "react-icons/fa6";
 import { FaEllo } from "react-icons/fa";
@@ -16,7 +17,7 @@ const Navbar = () => {
   return (
     <>
       <div className="w-[96%] flex justify-between mx-auto">
-        <div>
+        <div className="">
           <img src={darklogo} width={60} height={60} alt="logo" />
         </div>
         <div className="flex items-center  w-6/12 pl-48 justify-center  gap-8 text-[18px] text-gray-200">
@@ -28,7 +29,7 @@ const Navbar = () => {
               <h1 className="bd">Home</h1>
             </div>
           </Link>
-          <Link to="/signup">
+          <Link to="/shorts" >
             <div className="flex gap-2 nav-item items-center cursor-pointer">
               <span>
                 <FaClapperboard fontSize={20} />
@@ -36,7 +37,7 @@ const Navbar = () => {
               <h1>Shorts</h1>
             </div>
           </Link>
-          <Link to='login' >
+          <Link to='/reactions' >
 
           <div className="flex gap-2 nav-item items-center cursor-pointer">
             <span>
@@ -45,7 +46,7 @@ const Navbar = () => {
             <h1>Reactions</h1>
           </div>
           </Link>
-          <Link to='/' >
+          <Link to='/hot' >
 
           <div className="flex nav-item gap-2 items-center cursor-pointer">
             <span>
@@ -54,7 +55,7 @@ const Navbar = () => {
             <h1>Hot!</h1>
           </div>
           </Link>
-          <Link to='/' >
+          <Link to='/explore' >
 
           <div className="flex gap-2 nav-item items-center cursor-pointer">
             <span>
@@ -69,7 +70,7 @@ const Navbar = () => {
             <FaSearch />
           </div>
           <div>
-            <button className="flex items-center rounded-2xl bg-white text-black px-4 py-2 gap-1 text-[18px]">
+            <button className="flex items-center rounded-2xl bg-white text-black px-1 gap-1 font-semibold text-[18px]">
               {/* <FaFeatherAlt /> Create */}
               <WalletConnect />
             </button>

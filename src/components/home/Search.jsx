@@ -27,7 +27,7 @@ const Search = () => {
             </span>
           </div>
           <div className=" mx-auto flex justify-center  gap-2 items-center">
-            <h1 className="text-[40px] text-gray-600 ">Discover</h1>
+            <h1 className="text-[40px] text-gray-600 font-semibold ">Discover</h1>
             <button className="border-[1px] border-gray-500 rounded-full text-[14px] mt-2 py-1 px-3 ">
               Lady_in_jungle
             </button>

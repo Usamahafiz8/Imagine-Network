@@ -21,10 +21,10 @@ const Footer = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="bg-[#030303] pt-[30px] pb-2 ">
+    <div className="bg-[#0c0b0d] pt-[30px] pb-2 ">
       {!isSmallScreen ? (
         <div className="w-[100%] lg:w-[96%] bg-[#151419]  rounded-xl   lg:px-10 pt-6 pb-4 lg:mx-auto">
-          <div className="flex lg:w-[17%] mx-auto gap-4">
+          <div className="flex item-center justify-center mx-auto gap-4 ">
             <Tooltip title="Join us on Telegram!" placement="top">
               <span className="bg-transparent border border-gray-500 rounded-xl p-2 ">
                 <RiTelegramLine
@@ -46,8 +46,8 @@ const Footer = () => {
               </span>
             </Tooltip>
           </div>
-          <div className="flex gap-40 pr-[196px]  mt-6 items-center w-[81%] mx-auto">
-            <div className="text-white flex flex-col">
+          <div className="flex gap-40 pr-[16px] font-semibold   mt-6 items-center w-[81%] mx-auto ">
+            <div className="text-white flex flex-col ">
               <button>Send feedback</button>
               <button>Features</button>
             </div>
@@ -89,7 +89,7 @@ const Footer = () => {
               </span>
             </Tooltip>
           </div>
-          <div className="flex flex-col     mt-6 items-center ">
+          <div className="flex flex-col   mt-6 items-center ">
             <div className="text-white flex flex-col">
               <button>Send feedback</button>
               <button>Features</button>

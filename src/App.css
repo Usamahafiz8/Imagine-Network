@@ -1,3 +1,6 @@
+body{
+  background: #0c0b0d;
+}
 .center-container {
   display: flex;
   flex-direction: column;
@@ -72,6 +75,7 @@
   touch-action: manipulation;
 }
 
+
 .button-22:active {
   background-color: #006ae8;
 }
@@ -124,4 +128,80 @@
 
 .nav-item:hover::before {
   width: 100%; /* Expand to full width on hover */
+}
+
+
+
+/* add custom hover stylin on home post componet box  */
+.custom-title-box {
+  opacity: 0;
+  transition: all 0.5s ease;
+  bottom: -2rem;
+  padding-bottom: 1rem;
+}
+
+.custom-post-box:hover .custom-title-box {
+  opacity: 1;
+  bottom: 0;
+}
+.custom-post-box:hover  .image-scale {
+  transform: scale(1.1); 
+}
+
+
+                        /***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #bbbdc5;
+  height: 0.4rem;
+  border-radius: 5px;
+
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #ced0d9;
+  height: 0.4rem;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+   /* Centers thumb on the track */
+  background-color: #91949f;    
+  -webkit-appearance: none;
+  height: 1.2rem;
+  width: 2rem; 
+  margin-top: -6px;
+  border-radius: 10px;
+}
+input[type="range"]{
+  -webkit-appearance: none;
+  border-radius: 10px;
+}
+
+
+.scrollable-div {
+  /* Set height as needed */
+  overflow-y: auto; /* Enable vertical scrollbar */
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar for WebKit/Blink */
+  -ms-overflow-style: none;
+  
+}
+
+/* Hide scrollbar for WebKit/Blink */
+.scrollable-div::-webkit-scrollbar {
+  display: none;
+}
+
+
+.custom-detail-image{
+  display: none;
+  transition: all 1s ease;
+}
+.custom-detail-box:hover .custom-detail-image{
+  display: block;
+  
 }
