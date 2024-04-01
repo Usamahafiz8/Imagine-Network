@@ -48,7 +48,7 @@ const App = () => {
           <div className="lg:w-[5%] bg-[#030303] h-screen lg:fixed">
             <Sidebar show={show} isOpen={isOpen} setIsOpen={setIsOpen} setShow={setShow} />
           </div>
-          <div className="absolute bg-[#030303] left-[75px] z-50">
+          <div className="absolute bg-[#030303] left-[65px] z-50">
             <Tags show={show} setShow={setShow} />
             {/* <HamburgerMenu isOpen={isOpen} /> */}
           </div>
